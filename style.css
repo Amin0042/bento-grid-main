@@ -11,6 +11,7 @@
   --White: hsl(0, 0%, 100%);
   --Black: hsl(0, 0%, 7%);
   --f-normal: 1.125rem;
+  --f-medium: 2.5rem;
   --f-large: 3rem;
   --fw-normal: 400;
   --fw-large: 500;
@@ -19,4 +20,92 @@ body {
   font-family: "DM Sans", sans-serif;
   font-size: var(--f-normal);
   font-weight: var(--fw-normal);
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-size: var(--f-large);
+  font-weight: var(--fw-large);
+}
+h2 {
+  font-size: var(--f-medium);
+  font-weight: var(--fw-large);
+}
+h3 {
+  font-size: var(--f-medium);
+  font-weight: var(--fw-normal);
+}
+img {
+  width: 100%;
+}
+.cards {
+  display: grid;
+  margin: 3rem;
+  gap: 2rem;
+  grid-template-areas:
+    "create social social schedule"
+    "create social social schedule"
+    "write manage maintain schedule"
+    "write growth followers followers";
+}
+.card:nth-child(1) {
+  grid-area: create;
+  background-color: var(--Yellow-100);
+  & em {
+    color: var(--Purple-500);
+  }
+  & button {
+    background-color: var(--Yellow-500);
+    border-radius: 15px;
+    font-weight: var(--fw-large);
+    border: none;
+    display: flex;
+    color: var(--Purple-500);
+  }
+}
+.card:nth-child(2) {
+  grid-area: social;
+  background-color: var(--Purple-500);
+  color: var(--White);
+  & .yellow {
+    color: var(--Yellow-500);
+  }
+}
+.card:nth-child(3) {
+  grid-area: schedule;
+  background-color: var(--Purple-100);
+}
+.card:nth-child(4) {
+  grid-area: write;
+  background-color: var(--Yellow-500);
+}
+.card:nth-child(5) {
+  grid-area: manage;
+  background-color: var(--White);
+}
+.card:nth-child(6) {
+  grid-area: growth;
+  background-color: var(--white);
+}
+.card:nth-child(7) {
+  grid-area: maintain;
+  background-color: var(--Yellow-500);
+}
+.card:nth-child(8) {
+  grid-area: followers;
+  background-color: var(--Purple-500);
+  color: var(--White);
+}
+.card {
+  border-radius: 15px;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
