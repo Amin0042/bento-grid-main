@@ -8,10 +8,11 @@
   --Purple-500: hsl(256, 67%, 59%);
   --Yellow-100: hsl(31, 66%, 93%);
   --Yellow-500: hsl(39, 100%, 71%);
+  --pale-gray: hsl(0, 0%, 96%);
   --White: hsl(0, 0%, 100%);
   --Black: hsl(0, 0%, 7%);
   --f-normal: 1.125rem;
-  --f-medium: 2.5rem;
+  --f-medium: 2rem;
   --f-large: 3rem;
   --fw-normal: 400;
   --fw-large: 500;
@@ -20,6 +21,7 @@ body {
   font-family: "DM Sans", sans-serif;
   font-size: var(--f-normal);
   font-weight: var(--fw-normal);
+  background-color: var(--pale-gray);
 }
 main {
   display: flex;
@@ -41,7 +43,36 @@ h3 {
 img {
   width: 100%;
 }
-
+.flex {
+  display: flex;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flex-align {
+  display: flex;
+  align-items: center;
+}
+.flex-justify-between {
+  display: flex;
+  justify-content: space-between;
+}
 .cards {
   display: grid;
   margin: 3rem;
@@ -52,6 +83,10 @@ img {
     "write manage maintain schedule"
     "write growth followers followers";
 }
+.card {
+  padding: 2rem;
+  gap: 1rem;
+}
 .card:nth-child(1) {
   grid-area: create;
   background-color: var(--Yellow-100);
@@ -61,23 +96,35 @@ img {
   & button {
     background-color: var(--Yellow-500);
     border-radius: 15px;
-    font-weight: var(--fw-large);
+    font-weight: bold;
     border: none;
     display: flex;
     color: var(--Purple-500);
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
   }
 }
 .card:nth-child(2) {
   grid-area: social;
+  text-align: center;
   background-color: var(--Purple-500);
   color: var(--White);
   & .yellow {
     color: var(--Yellow-500);
   }
+  & img {
+    max-width: 30%;
+  }
 }
 .card:nth-child(3) {
   grid-area: schedule;
   background-color: var(--Purple-100);
+  padding-right: 0;
+  font-weight: bold;
+  & img {
+    aspect-ratio: 0.7;
+    border-radius: 0;
+  }
 }
 .card:nth-child(4) {
   grid-area: write;
@@ -89,7 +136,7 @@ img {
 }
 .card:nth-child(6) {
   grid-area: growth;
-  background-color: var(--white);
+  background-color: var(--White);
 }
 .card:nth-child(7) {
   grid-area: maintain;
@@ -99,6 +146,9 @@ img {
   grid-area: followers;
   background-color: var(--Purple-500);
   color: var(--White);
+  & img {
+    width: 40%;
+  }
 }
 .card {
   border-radius: 15px;
